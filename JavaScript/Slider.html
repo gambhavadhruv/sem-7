@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Slider Demo</title>
+	<style>
+		.sliderdemo{
+			width: 100%;
+		}
+		.sliderdemo {
+  			width: 100%;
+  			height: 25px;
+  			background: #d3d3d3;
+  			outline: 2px solid black;
+  			opacity: 0.7;
+		}
+		.sliderdemo:hover {
+  			opacity: 1;
+		}
+		.sliderdemo::-webkit-slider-thumb {
+  			width: 25px;
+  			height: 25px;
+  			background: #d3d3d3;
+  			cursor: pointer;
+		}
+
+
+	</style>
+</head>
+<body>
+	<h1>Custom Slider Range</h1>
+	<input type="Range" min="1" max="100" value="50" class="sliderdemo" id="myslider">
+	<p>Value : </p><span id="myvalue"></span>
+
+	<script>
+		var slidercontrol = document.getElementById('myslider');
+		var slideroutput = document.getElementById('myvalue');
+		slideroutput.innerHTML = slidercontrol.value;
+
+		slidercontrol.oninput = function() {
+			slideroutput.innerHTML=this.value;
+		}
+
+
+	</script>
+
+</body>
+</html>
