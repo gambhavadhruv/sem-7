@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+		<link rel="stylesheet" type="text/css" href="calc.css">
+</head>
+<body>
+	<div class="cal1">
+	<table align="center" bgcolor="black">
+		<tr>
+			<td colspan="5">
+				<input type="text" id="output" placeholder="0">
+			</td>
+		</tr>
+		<tr>
+			<td><input type="button" value="7" onclick="numbers(7)" ></td>
+			<td><input type="button" value="8" onclick="numbers(8)"></td>
+			<td><input type="button" value="9" onclick="numbers(9)"></td>
+			<td><input type="button" value="*" onclick="numbers('*')"></td>
+
+		</tr>
+		<tr>
+			<td><input type="button" value="4" onclick="numbers(4)"></td>
+			<td><input type="button" value="5" onclick="numbers(5)"></td>
+			<td><input type="button" value="6" onclick="numbers(6)"></td>
+			<td><input type="button" value="/" onclick="numbers('/')"></td>
+
+		</tr>
+		<tr>
+			<td><input type="button" value="1" onclick="numbers(1)"></td>
+			<td><input type="button" value="2" onclick="numbers(2)"></td>
+			<td><input type="button" value="3" onclick="numbers(3)"></td>
+			<td><input type="button" value="+" onclick="numbers('+')"></td>
+
+		</tr>
+		<tr>
+			<td colspan="4">
+				<input type="button" value="=" onclick="ans()">
+
+			</td>
+		</tr>
+		<tr>
+			<td><input type="button" value="AC" onclick="clickAC()"></td>
+			<td><input type="button" value="0" onclick="numbers(0)"></td>
+			<td><input type="button" value="<" onclick="removelastchar()"></td>
+			<td><input type="button" value="-" onclick="numbers('-')"></td>
+
+		</tr>
+		</div>
+	</table>
+	<script type="text/javascript">
+		function numbers(num){
+			document.getElementById("output").value+=num;
+		}
+		function ans(){
+			var an1 = document.getElementById("output");
+			// var ans1 = document.getElementById("answer");
+			an1.value= eval(document.getElementById("output").value);
+		}
+		function clickAC(){
+			document.getElementById("output").value="";
+			
+		}
+		function removelastchar(){
+			var s = document.getElementById("output").value;
+			document.getElementById("output").value = s.substring(0,(s.length-1));
+		}
+	</script>
+
+</body>
+</html>
